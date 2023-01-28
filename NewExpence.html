@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('ex2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            color: rgb(2, 2, 2);
+            text-align: center;
+        }
+        h1{background-color: rgb(254, 0, 0);
+            padding: 5px 15px;}
+        form {
+            background-color: rgb(8, 230, 200);
+            text-align:center;
+            color: black;
+        }
+        input {
+        width: 25%;
+        padding: 8px 15px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        }
+        select{
+            width: 15%;
+            padding: 5px 13px;
+            color: black;
+
+        }
+        .button {
+            background-color: #14ae00;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            }
+        
+    </style>
+
+</head>
+
+<body>
+    <h1 style="color: rgb(255, 255, 255);">EXPENCE TRACKER APP</h1>
+    <h3 style="color: rgb(0, 0, 0);">A way to save you money...</h3>
+    <form onsubmit="saveToLocalStorage(event)">
+        <br><br><label for="amount" class="amount">PUT YOUR AMOUNT HERE :</label><br>
+        <input type="number" class="amount" id="amount"><br><br>
+        <label for="description" class="description">WHERE YOU SPEND :</label><br>
+        <input type="text" class="description" id="description"><br><br>
+        <div class="mb-3">
+            <label for="category" style="color: rgb(0, 0, 0);"> CHOOSE CATEGORY:</label>
+            <select id="category" name="category" style="font-size: large;" >
+                <option value="CLOTHING">CLOTHING</option>
+                <option value="food">FOOD</option>
+                <option value="TRIPS">TRIPS</option>
+                <option value="PURCHASES">PURCHASES</option>
+                <option value="CARS">CARS</option>
+                <option value="HOME">HOME</option>
+              </select>
+        </div><br><br>
+        <button type="submit" class="button">CONTROL EXPENCE</button><br><br><br>
+    </form>
+    <div>
+    
+    <ul id="listOfItems" class="button button2"></ul>    
+</div> 
+
+<script src="newExpence.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.5/axios.min.js"></script>
+</body>
+</html>
